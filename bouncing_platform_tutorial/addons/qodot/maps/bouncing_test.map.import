@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/bouncing_test.map-229015da5cf805d31484cc64d9047e43.tres"
+
+[deps]
+
+source_file="res://addons/qodot/maps/bouncing_test.map"
+dest_files=[ "res://.import/bouncing_test.map-229015da5cf805d31484cc64d9047e43.tres" ]
+
+[params]
+
