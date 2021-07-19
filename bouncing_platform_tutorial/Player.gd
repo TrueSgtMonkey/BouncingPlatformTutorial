@@ -9,6 +9,7 @@ export (float) var maxVertClampUp = 1.5
 
 var moveVec := Vector3()
 var velocity := Vector3()
+var outer_velocity := Vector3()
 
 var gravity := 30
 var jumpButtonHeld := false
@@ -41,10 +42,19 @@ func _physics_process(delta):
 		elif !Input.is_action_pressed("JUMP") && jumpButtonHeld:
 			velocity.y = 0
 			jumpButtonHeld = false
+		outer_velocity = Vector3.ZERO
 	else:
 		velocity.y -= gravity * delta
 		
-	move_and_slide(velocity, Vector3.UP, false)
+	if is_on_ceiling():
+		velocity.y *= -0.5
+		outer_velocity.y *= -0.5
+		
+	move_and_slide(velocity + outer_velocity, Vector3.UP, false)
+		
+func setVelocity(vel : Vector3):
+	outer_velocity = vel
+	velocity += vel
 		
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:

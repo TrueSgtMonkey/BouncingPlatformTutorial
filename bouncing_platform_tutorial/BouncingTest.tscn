@@ -39,10 +39,19 @@ adjustment_saturation = 0.5
 [node name="bouncing_test" parent="." instance=ExtResource( 2 )]
 
 [node name="Bounce1" parent="." instance=ExtResource( 3 )]
+bounce = Vector3( 0, 10, 0 )
+moveAmount = Vector3( 0, 1.75, 0 )
+resetTime = 0.25
 
 [node name="Bounce2" parent="." instance=ExtResource( 1 )]
+bounce = Vector3( 10, 11, 0 )
+moveAmount = Vector3( 0, 1.75, 0 )
+resetTime = 0.25
 
 [node name="Bounce3" parent="." instance=ExtResource( 4 )]
+bounce = Vector3( -60, 1, 0 )
+moveAmount = Vector3( -2.5, 0, 0 )
+resetTime = 0.35
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
